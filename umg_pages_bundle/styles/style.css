@@ -115,6 +115,21 @@ p {
   margin-right: auto;
 }
 
+
+.cinzel-400 {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cinzel-700 {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* --------------------
    HEADER
 -------------------- */
@@ -231,6 +246,11 @@ p {
 .hero-content p,
 .hero-content .eyebrow {
   color: white;
+}
+
+.eyebrow {
+  font-family: cinzel-400, serif;
+  font-size: 2rem;
 }
 
 .hero-text {
