@@ -69,3 +69,68 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", handleScroll, { passive: true });
   window.addEventListener("resize", handleScroll);
 });
+
+const galleryImages = Array.from(document.querySelectorAll(".lightbox-image"));
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxCaption = document.getElementById("lightboxCaption");
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
+
+let currentImageIndex = 0;
+
+function openLightbox(index) {
+  currentImageIndex = index;
+  const img = galleryImages[currentImageIndex];
+
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightboxCaption.textContent = img.alt;
+
+  lightbox.classList.add("open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.classList.add("lightbox-open");
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("lightbox-open");
+}
+
+function showNextImage() {
+  currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+  openLightbox(currentImageIndex);
+}
+
+function showPrevImage() {
+  currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+  openLightbox(currentImageIndex);
+}
+
+galleryImages.forEach((img, index) => {
+  img.addEventListener("click", () => openLightbox(index));
+});
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightboxNext.addEventListener("click", showNextImage);
+lightboxPrev.addEventListener("click", showPrevImage);
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (!lightbox.classList.contains("open")) return;
+
+  if (e.key === "Escape") {
+    closeLightbox();
+  } else if (e.key === "ArrowRight") {
+    showNextImage();
+  } else if (e.key === "ArrowLeft") {
+    showPrevImage();
+  }
+});

@@ -34,8 +34,8 @@
         <p class="section-label">Project Gallery</p>
         <h1>Completed spaces, premium materials, and design inspiration.</h1>
         <p class="page-intro">
-          Explore kitchens, baths, cabinetry, countertops, and showroom details from Universal Marble & Granite.
-          This page is built so you can easily swap in new images anytime.
+          Explore kitchens, baths, cabinetry, countertops, and showroom highlights from Universal Marble & Granite.
+          Click any image to view it full screen and browse through the gallery.
         </p>
       </div>
     </section>
@@ -48,71 +48,65 @@
             <p class="section-label">Browse the Work</p>
             <h2>See the craftsmanship up close</h2>
           </div>
-          <p class="gallery-support-text">
-            Add, remove, or reorder images by duplicating a single gallery block. Keep your photos in
-            <code>./images/gallery/</code> for the easiest setup.
-          </p>
+
         </div>
 
         <div class="gallery-masonry">
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery1.jpg" alt="Gallery Image 1">
+            <img src="./images/gallery/gallery1.jpg" alt="Gallery Image 1" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery2.jpg" alt="Gallery Image 2">
+            <img src="./images/gallery/gallery2.jpg" alt="Gallery Image 2" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery3.jpg" alt="Gallery Image 3">
+            <img src="./images/gallery/gallery3.jpg" alt="Gallery Image 3" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery4.jpg" alt="Gallery Image 4">
+            <img src="./images/gallery/gallery4.jpg" alt="Gallery Image 4" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery5.jpg" alt="Gallery Image 5">
+            <img src="./images/gallery/gallery5.jpg" alt="Gallery Image 5" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery6.jpg" alt="Gallery Image 6">
+            <img src="./images/gallery/gallery6.jpg" alt="Gallery Image 6" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery7.jpg" alt="Gallery Image 7">
+            <img src="./images/gallery/gallery7.jpg" alt="Gallery Image 7" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery8.jpg" alt="Gallery Image 8">
+            <img src="./images/gallery/gallery8.jpg" alt="Gallery Image 8" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery10.jpg" alt="Gallery Image 10">
+            <img src="./images/gallery/gallery9.jpg" alt="Gallery Image 9" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery11.jpg" alt="Gallery Image 11">
+            <img src="./images/gallery/gallery10.jpg" alt="Gallery Image 10" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery12.jpg" alt="Gallery Image 12">
+            <img src="./images/gallery/gallery11.jpg" alt="Gallery Image 11" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery13.jpg" alt="Gallery Image 13">
+            <img src="./images/gallery/gallery12.jpg" alt="Gallery Image 12" class="lightbox-image">
           </div>
 
           <div class="gallery-item">
-            <img src="./images/gallery/gallery9.jpg" alt="Gallery Image 9">
+            <img src="./images/gallery/gallery13.jpg" alt="Gallery Image 13" class="lightbox-image">
           </div>
 
         </div>
 
-        <div class="gallery-page-note">
-          <p>To add another image, copy one <code>.gallery-item</code> block and change the filename and alt text.</p>
-        </div>
 
       </div>
     </section>
@@ -144,6 +138,23 @@
       </div>
     </div>
   </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery view">&times;</button>
+
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      &#10094;
+    </button>
+
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+      &#10095;
+    </button>
+  </div>
 
   <script src="script.js"></script>
 </body>
