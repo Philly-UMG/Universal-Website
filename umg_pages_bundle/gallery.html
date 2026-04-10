@@ -6,115 +6,145 @@
   <title>Gallery | Universal Marble & Granite</title>
   <link rel="stylesheet" href="./styles/style.css">
 </head>
-
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index_updated.html" class="logo">
-      <img src="./images/logo.png" alt="UMG Logo">
-    </a>
+  <header class="site-header static-header">
+    <div class="container header-inner">
+      <a href="index_updated.html" class="logo">
+        <img src="./images/logo.png" alt="UMG Logo">
+      </a>
 
-    <button class="menu-toggle">☰</button>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
 
-    <nav class="site-nav">
-      <a href="index_updated.html">Home</a>
-      <a href="index_updated.html#services">Services</a>
-      <a href="cabinets.html">Cabinets</a>
-      <a href="countertops.html">Countertops</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="index_updated.html#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<!-- HERO -->
-<section class="page-hero">
-  <div class="container">
-    <div class="page-hero-copy">
-      <p class="section-label">Project Gallery</p>
-      <h1>Real kitchens, real materials, real results.</h1>
-      <p class="page-intro">
-        Browse completed projects, material selections, and showroom highlights.
-        This gallery is designed to feel clean, visual, and easy to explore.
-      </p>
+      <nav class="site-nav">
+        <a href="index_updated.html">Home</a>
+        <a href="index_updated.html#services">Services</a>
+        <a href="cabinets.html">Cabinets</a>
+        <a href="countertops.html">Countertops</a>
+        <a href="gallery.html" class="active-link">Gallery</a>
+        <a href="index_updated.html#contact">Contact</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- GALLERY GRID -->
-<section class="gallery-page section">
-  <div class="container">
+  <main>
 
-    <div class="gallery-masonry">
-
-      <!-- IMAGE -->
-      <div class="gallery-item">
-        <img src="./images/gallery/gallery1.jpg" alt="Gallery Image 1">
+    <section class="page-hero gallery-hero">
+      <div class="container gallery-hero-inner">
+        <p class="section-label">Project Gallery</p>
+        <h1>Completed spaces, premium materials, and design inspiration.</h1>
+        <p class="page-intro">
+          Explore kitchens, baths, cabinetry, countertops, and showroom details from Universal Marble & Granite.
+          This page is built so you can easily swap in new images anytime.
+        </p>
       </div>
+    </section>
 
-      <!-- DUPLICATE THIS BLOCK -->
-      <div class="gallery-item">
-        <img src="./images/gallery/gallery2.jpg" alt="Gallery Image 2">
-      </div>
+    <section class="gallery-page section">
+      <div class="container">
 
-      <div class="gallery-item">
-        <img src="./images/gallery/gallery3.jpg" alt="Gallery Image 3">
-      </div>
+        <div class="gallery-intro-row">
+          <div>
+            <p class="section-label">Browse the Work</p>
+            <h2>See the craftsmanship up close</h2>
+          </div>
+          <p class="gallery-support-text">
+            Add, remove, or reorder images by duplicating a single gallery block. Keep your photos in
+            <code>./images/gallery/</code> for the easiest setup.
+          </p>
+        </div>
 
-      <div class="gallery-item">
-        <img src="./images/gallery/gallery4.jpg" alt="Gallery Image 4">
-      </div>
+        <div class="gallery-masonry">
 
-      <div class="gallery-item">
-        <img src="./images/gallery/gallery5.jpg" alt="Gallery Image 5">
-      </div>
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery1.jpg" alt="Gallery Image 1">
+          </div>
 
-<div class="gallery-item">
-        <img src="./images/gallery/gallery6.jpg" alt="Gallery Image 6">
-      </div>
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery2.jpg" alt="Gallery Image 2">
+          </div>
 
-        <div class="gallery-item">
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery3.jpg" alt="Gallery Image 3">
+          </div>
+
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery4.jpg" alt="Gallery Image 4">
+          </div>
+
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery5.jpg" alt="Gallery Image 5">
+          </div>
+
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery6.jpg" alt="Gallery Image 6">
+          </div>
+
+          <div class="gallery-item">
             <img src="./images/gallery/gallery7.jpg" alt="Gallery Image 7">
+          </div>
 
-            <div class="gallery-item">
-                <img src="./images/gallery/gallery8.jpg" alt="Gallery Image 8">
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery8.jpg" alt="Gallery Image 8">
+          </div>
 
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery10.jpg" alt="Gallery Image 10">
+          </div>
+
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery11.jpg" alt="Gallery Image 11">
+          </div>
+
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery12.jpg" alt="Gallery Image 12">
+          </div>
+
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery13.jpg" alt="Gallery Image 13">
+          </div>
+
+          <div class="gallery-item">
+            <img src="./images/gallery/gallery9.jpg" alt="Gallery Image 9">
+          </div>
+
+        </div>
+
+        <div class="gallery-page-note">
+          <p>To add another image, copy one <code>.gallery-item</code> block and change the filename and alt text.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Universal Marble & Granite</h3>
+        <p>Kitchen and bath design, cabinets, and countertops in Philadelphia.</p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index_updated.html">Home</a></li>
+          <li><a href="cabinets.html">Cabinets</a></li>
+          <li><a href="countertops.html">Countertops</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>233 W Lehigh Ave<br>Philadelphia, PA</p>
+        <p>215-739-3806</p>
+        <p>PhillyUMG@gmail.com</p>
+      </div>
     </div>
+  </footer>
 
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <h3>Universal Marble & Granite</h3>
-      <p>Kitchen and bath design, cabinets, and countertops in Philadelphia.</p>
-    </div>
-
-    <div>
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cabinets.html">Cabinets</a></li>
-        <li><a href="countertops.html">Countertops</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p>233 W Lehigh Ave<br>Philadelphia, PA</p>
-      <p>215-739-3806</p>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
