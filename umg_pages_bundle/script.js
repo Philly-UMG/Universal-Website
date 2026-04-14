@@ -134,3 +134,45 @@ document.addEventListener("keydown", (e) => {
     showPrevImage();
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".site-header");
+  const hero = document.querySelector(".hero");
+
+
+const filterPills = document.querySelectorAll(".filter-pill");
+const productSections = document.querySelectorAll(".product-section[data-group]");
+
+if (filterPills.length && productSections.length) {
+  filterPills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const selectedFilter = pill.dataset.filter;
+
+      filterPills.forEach((item) => item.classList.remove("active"));
+      pill.classList.add("active");
+
+      productSections.forEach((section) => {
+        const sectionGroup = section.dataset.group;
+        const shouldShow = selectedFilter === "all" || sectionGroup === selectedFilter;
+
+        section.classList.toggle("is-hidden", !shouldShow);
+      });
+
+      const firstVisibleSection = document.querySelector(
+        ".product-section[data-group]:not(.is-hidden)"
+      );
+
+      if (firstVisibleSection) {
+        const headerOffset = 110;
+        const sectionTop =
+          firstVisibleSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: sectionTop,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+}
+});
