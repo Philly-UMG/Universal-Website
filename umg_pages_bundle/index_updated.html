@@ -37,22 +37,25 @@
   </header>
 
   <main>
-    <!-- HERO -->
+  <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-media"></div>
-  <div class="hero-white-overlay"></div>
+  <video class="hero-media" autoplay muted loop playsinline>
+    <source src="./images/hero.mp4" type="video/mp4" />
+  </video>
+
   <div class="hero-overlay"></div>
+  <div class="hero-fade"></div>
 
   <div class="container hero-content">
     <p class="eyebrow">Universal Marble & Granite</p>
-    <h3 class="hero-subtitle"><i>Quality Kitchen & Bath Design</i></h3>
-    <!--<h1>Quality You Can See. Service You Can Trust.<br>
-          <i>The Universal Way.</i></h1>-->
+    <h1 class="hero-title">Quality Kitchen & Bath Design</h1>
     <p class="hero-text">
-      Elevate your home with high-quality materials,
-      expert design support, and a showroom experience built around style and function.<br><br>
-      <i>Let us bring your vision to life - The Universal Way.</i>
+      Elevate your home with high-quality materials, expert design support, and a showroom experience built around style and function.
     </p>
+    <p class="hero-tagline">
+      <i>Let us bring your vision to life, The Universal Way.</i>
+    </p>
+
     <div class="hero-buttons">
       <a href="#gallery" class="btn btn-primary">Explore Gallery</a>
       <a href="#showroom" class="btn btn-secondary">Visit Showroom</a>
@@ -97,7 +100,7 @@
     <div class="services-grid">
       <article class="service-card">
         <div class="card-img-container">
-          <img src="./images/bath2.JPG" alt="Kitchen and bath design" class="real-image service-img">
+          <img src="./images/bath2.JPG" alt="Kitchen and bath design" class="service-img">
         </div>
         <div class="card-content">
           <h3>Kitchen &amp; Bath Design</h3>
@@ -110,7 +113,7 @@
 
       <article class="service-card">
         <div class="card-img-container">
-          <img src="./images/vanity1.jpg" alt="Cabinets and vanities" class="real-image service-img">
+          <img src="./images/vanity1.jpg" alt="Cabinets and vanities" class="service-img">
         </div>
         <div class="card-content">
           <h3>Cabinets &amp; Vanities</h3>
@@ -123,7 +126,7 @@
 
       <article class="service-card">
         <div class="card-img-container">
-          <img src="./images/counter1.jpg" alt="Granite and quartz countertops" class="real-image service-img">
+          <img src="./images/counter1.jpg" alt="Granite and quartz countertops" class="service-img">
         </div>
         <div class="card-content">
           <h3>Granite &amp; Quartz Countertops</h3>
@@ -188,48 +191,58 @@
     
 
     <!-- FEATURE STRIP -->
-    <section class="feature-strip section">
+   <section class="feature-strip section">
   <div class="container feature-strip-grid">
     <div class="feature-left">
-    <div>
-      <p class="section-label">Why Choose UMG</p>
-      <h2>Local Expertise, Premium Materials, Thoughtful Design</h2>
+      <div class="feature-heading">
+        <p class="section-label">Why Choose UMG</p>
+        <h2>Local Expertise, Premium Materials, Thoughtful Design</h2>
+      </div>
+
+      <div class="feature-bg-image">
+        <img src="./images/IMG_5654.JPG" alt="Universal Marble & Granite showroom materials and design selections">
+      </div>
     </div>
-<div class="feature-bg-image">
-    <img src="./images/IMG_5654.JPG" alt="">
-  </div>
-  </div>
+
     <div class="feature-points">
       <div class="feature-item">
         <div class="feature-icon">
-          <img src="./images/icons/service.png" alt="Personalized Service">
+          <img src="./images/icons/service.png" alt="Personalized service icon">
         </div>
-        <h3>Personalized Service</h3>
-        <p>We help guide your selections with a hands-on, consultative approach.</p>
+        <div class="feature-copy">
+          <h3>Personalized Service</h3>
+          <p>We help guide your selections with a hands-on, consultative approach.</p>
+        </div>
       </div>
 
       <div class="feature-item">
         <div class="feature-icon">
-          <img src="./images/icons/quality.png" alt="Quality Products">
+          <img src="./images/icons/quality.png" alt="Quality products icon">
         </div>
-        <h3>Quality Products</h3>
-        <p>Cabinets, vanities, granite, and quartz chosen for durability and style.</p>
+        <div class="feature-copy">
+          <h3>Quality Products</h3>
+          <p>Cabinets, vanities, granite, and quartz chosen for durability and style.</p>
+        </div>
       </div>
 
       <div class="feature-item">
         <div class="feature-icon">
-          <img src="./images/icons/showroom.png" alt="Showroom Experience">
+          <img src="./images/icons/showroom.png" alt="Showroom experience icon">
         </div>
-        <h3>Showroom Experience</h3>
-        <p>See materials in person and compare finishes with confidence.</p>
+        <div class="feature-copy">
+          <h3>Showroom Experience</h3>
+          <p>See materials in person and compare finishes with confidence.</p>
+        </div>
       </div>
 
       <div class="feature-item">
         <div class="feature-icon">
-          <img src="./images/icons/philly.png" alt="Philadelphia Based">
+          <img src="./images/icons/philly.png" alt="Philadelphia based icon">
         </div>
-        <h3>Philadelphia Based</h3>
-        <p>Serving jobs in PA, NJ, DE, and NY.</p>
+        <div class="feature-copy">
+          <h3>Philadelphia Based</h3>
+          <p>Serving projects across Pennsylvania, New Jersey, Delaware, and New York.</p>
+        </div>
       </div>
     </div>
   </div>
