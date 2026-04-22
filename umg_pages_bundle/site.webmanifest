@@ -1,0 +1,17 @@
+{
+  "name": "Universal Marble & Granite",
+  "short_name": "UMG",
+  "description": "Philadelphia-based kitchen and bath design, cabinets, and countertops.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f5f1",
+  "theme_color": "#735c5a",
+  "icons": [
+    {
+      "src": "/images/umglogowhite.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

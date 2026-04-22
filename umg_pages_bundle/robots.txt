@@ -1,0 +1,8 @@
+# robots.txt for Universal Marble & Granite
+# https://www.phillyumg.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.phillyumg.com/sitemap.xml
