@@ -216,6 +216,12 @@ p {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .site-nav a {
+    color: #000000;
+  }
+}
+
 /* --------------------
    HERO
 -------------------- */
@@ -1690,6 +1696,111 @@ p {
   font-size: 0.96rem;
 }
 
+/* Cabinet construction spec list (21st Century section) */
+.product-specs {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 14px 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.product-specs li {
+  position: relative;
+  padding: 4px 0 4px 16px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #6b5e58;
+  letter-spacing: 0.01em;
+}
+
+.product-specs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 8px;
+  height: 1px;
+  background: #c9a961;
+}
+
+/* Per-card one-line construction note (21st Century cabinets) */
+.product-construction {
+  margin: 6px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #6b5e58;
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+/* Section-level shared spec callout (above the cabinet grid) */
+.standard-features {
+  max-width: 760px;
+  margin: 28px auto 36px;
+  padding: 22px 28px 24px;
+  background: linear-gradient(180deg, #faf6f0 0%, #f3ece2 100%);
+  border: 1px solid rgba(201, 169, 97, 0.32);
+  border-radius: 4px;
+  position: relative;
+}
+
+.standard-features::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(201, 169, 97, 0.18);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.standard-features-label {
+  margin: 0 0 14px;
+  text-align: center;
+  font-family: "Cinzel", "Cormorant Garamond", "Playfair Display", serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8a6a2f;
+}
+
+.standard-features-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 28px;
+}
+
+.standard-features-list li {
+  position: relative;
+  padding: 4px 0 4px 18px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #4a3f3a;
+}
+
+.standard-features-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.95em;
+  width: 10px;
+  height: 1px;
+  background: #c9a961;
+}
+
+@media (max-width: 600px) {
+  .standard-features {
+    padding: 20px 22px;
+  }
+  .standard-features-list {
+    grid-template-columns: 1fr;
+    gap: 4px 0;
+  }
+}
+
 .showcase-panel,
 .about-hero-panel,
 .about-process-feature {
@@ -2688,9 +2799,9 @@ html {
   background: #f0ebeb;
 }
 .surfaces-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  max-width: 1120px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1280px;
 }
 .surface-card {
   display: flex;
@@ -2807,8 +2918,11 @@ html {
   }
 
   .surfaces-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .more-services-grid {
