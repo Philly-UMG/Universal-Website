@@ -75,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryImages = Array.from(document.querySelectorAll(".lightbox-image"));
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightboxImg");
-  const lightboxCaption = document.getElementById("lightboxCaption");
   const lightboxClose = document.getElementById("lightboxClose");
   const lightboxPrev = document.getElementById("lightboxPrev");
   const lightboxNext = document.getElementById("lightboxNext");
@@ -84,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     galleryImages.length &&
     lightbox &&
     lightboxImg &&
-    lightboxCaption &&
     lightboxClose &&
     lightboxPrev &&
     lightboxNext
@@ -97,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
-      lightboxCaption.textContent = img.alt;
 
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
