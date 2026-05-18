@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://www.phillyumg.com/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -15,28 +15,43 @@
 
   <url>
     <loc>https://www.phillyumg.com/about</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.phillyumg.com/cabinets</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.phillyumg.com/images/gallery/gallery7823.jpg</image:loc>
+      <image:title>Cabinet collection at Universal Marble &amp; Granite</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://www.phillyumg.com/countertops</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.phillyumg.com/images/panel2.jpg</image:loc>
+      <image:title>Granite, quartz, and marble countertops</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.phillyumg.com/finishes</loc>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.phillyumg.com/gallery</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

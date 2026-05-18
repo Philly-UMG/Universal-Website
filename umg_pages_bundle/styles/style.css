@@ -1241,6 +1241,23 @@ p {
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* Subgroup label inside a resources section (e.g. Tile & Flooring vs Cabinet Hardware) */
+.resource-group-label {
+  font-family: "Cinzel", "Cormorant Garamond", "Playfair Display", serif;
+  font-weight: 500;
+  font-size: 0.92rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8b7355;
+  margin: 36px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201, 169, 97, 0.28);
+}
+
+.resource-group-label:first-of-type {
+  margin-top: 12px;
+}
+
 .highlight-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
@@ -2838,15 +2855,38 @@ html {
   margin-bottom: 22px;
   background: #f1eae0;
   border: 1px solid rgba(201, 169, 97, 0.2);
+  position: relative;
 }
 .surface-card .product-icon {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
 }
-.surface-card:hover .product-icon {
+.surface-card .product-icon-hover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+/* Fade-swap only applies to cards that actually have a hover image
+   (e.g. finishes page). Cards without one keep the original zoom. */
+.surface-card:has(.product-icon-hover):hover .product-icon {
+  opacity: 0;
+}
+.surface-card:hover .product-icon-hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.surface-card:not(:has(.product-icon-hover)):hover .product-icon {
   transform: scale(1.05);
 }
 .surface-card .product-meta {
