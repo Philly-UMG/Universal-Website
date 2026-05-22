@@ -1206,6 +1206,12 @@ p {
   column-gap: 18px;
 }
 
+@media (min-width: 1400px) {
+  .gallery-masonry {
+    column-count: 4;
+  }
+}
+
 .gallery-item {
   break-inside: avoid;
   margin-bottom: 18px;
@@ -1222,11 +1228,11 @@ p {
   display: block;
   border-radius: 0;
   transition: transform 0.45s ease, opacity 0.3s ease;
-  transform: scale(1.25);
+  transform: scale(1);
 }
 
 .gallery-item:hover img {
-  transform: scale(1.22);
+  transform: scale(1.04);
 }
 
 .resource-list,
@@ -2629,6 +2635,10 @@ html {
 }
 .gallery-item img {
   cursor: zoom-in;
+}
+.gallery-item img:focus-visible {
+  outline: 3px solid #735c5a;
+  outline-offset: 2px;
 }
 
 /* ---- About-page highlight cards ---- */

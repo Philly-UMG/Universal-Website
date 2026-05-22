@@ -120,6 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     galleryImages.forEach((img, index) => {
       img.addEventListener("click", () => openLightbox(index));
+      img.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openLightbox(index);
+        }
+      });
     });
 
     lightboxClose.addEventListener("click", closeLightbox);
