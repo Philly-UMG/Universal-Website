@@ -189,4 +189,106 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // ===== Promo bar: pin header to top once user scrolls past =====
+  const promoBar = document.querySelector(".promo-bar");
+  if (promoBar) {
+    const updatePromo = () => {
+      const promoH = promoBar.offsetHeight;
+      if (window.scrollY > promoH - 4) {
+        document.body.classList.add("promo-hidden");
+      } else {
+        document.body.classList.remove("promo-hidden");
+      }
+    };
+    window.addEventListener("scroll", updatePromo, { passive: true });
+    window.addEventListener("resize", updatePromo);
+    updatePromo();
+  }
+
+  // ===== Granite-sale swatch hover/focus preview =====
+  const swatchChips = document.querySelectorAll(".swatch-chip");
+  const swatchPreview = document.getElementById("swatchPreview");
+  const swatchPreviewImg = document.getElementById("swatchPreviewImg");
+  const swatchPreviewLabel = document.getElementById("swatchPreviewLabel");
+  const graniteContent = document.querySelector(".granite-sale-content");
+
+  if (swatchChips.length && swatchPreview && swatchPreviewImg && graniteContent) {
+    const isMobile = () => window.matchMedia("(max-width: 720px)").matches;
+
+    function openPreview(chip) {
+      const src = chip.dataset.swatch;
+      if (!src) return;
+      // Build a clean label from the chip text (strip count badge)
+      const labelText = chip.cloneNode(true);
+      const badge = labelText.querySelector("span");
+      if (badge) badge.remove();
+      const label = labelText.textContent.trim();
+
+      swatchPreviewImg.src = src;
+      swatchPreviewImg.alt = label + " granite swatch";
+      swatchPreviewLabel.textContent = label;
+      swatchPreview.classList.add("is-open");
+      swatchPreview.setAttribute("aria-hidden", "false");
+      chip.classList.add("is-active");
+
+      if (!isMobile()) {
+        // Position relative to .granite-sale-content (the chip's positioning ancestor)
+        const containerRect = graniteContent.getBoundingClientRect();
+        const chipRect = chip.getBoundingClientRect();
+        const previewW = swatchPreview.offsetWidth;
+        const previewH = swatchPreview.offsetHeight;
+        const containerW = graniteContent.offsetWidth;
+
+        // Center under the chip; clamp to container
+        let left = (chipRect.left - containerRect.left) + (chip.offsetWidth / 2) - (previewW / 2);
+        left = Math.max(0, Math.min(left, containerW - previewW));
+
+        const top = (chipRect.bottom - containerRect.top) + 12;
+        swatchPreview.style.left = left + "px";
+        swatchPreview.style.top = top + "px";
+      } else {
+        swatchPreview.style.left = "";
+        swatchPreview.style.top = "";
+      }
+    }
+
+    function closePreview(chip) {
+      swatchPreview.classList.remove("is-open");
+      swatchPreview.setAttribute("aria-hidden", "true");
+      if (chip) chip.classList.remove("is-active");
+    }
+
+    swatchChips.forEach((chip) => {
+      // Desktop hover
+      chip.addEventListener("mouseenter", () => openPreview(chip));
+      chip.addEventListener("mouseleave", () => closePreview(chip));
+      // Keyboard focus
+      chip.addEventListener("focus", () => openPreview(chip));
+      chip.addEventListener("blur", () => closePreview(chip));
+      // Touch / click toggle (mobile)
+      chip.addEventListener("click", () => {
+        if (chip.classList.contains("is-active")) {
+          closePreview(chip);
+        } else {
+          // Close any other open chip first
+          document.querySelectorAll(".swatch-chip.is-active").forEach((c) => closePreview(c));
+          openPreview(chip);
+        }
+      });
+    });
+
+    // Tap outside preview to dismiss on mobile
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".swatch-chip") && !e.target.closest(".swatch-preview")) {
+        document.querySelectorAll(".swatch-chip.is-active").forEach((c) => closePreview(c));
+      }
+    });
+
+    // Recompute on resize while open
+    window.addEventListener("resize", () => {
+      const active = document.querySelector(".swatch-chip.is-active");
+      if (active) openPreview(active);
+    });
+  }
 });
