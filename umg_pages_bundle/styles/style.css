@@ -3933,3 +3933,96 @@ body.promo-hidden .site-header:not(.static-header) { top: 0; }
   .site-header:not(.static-header) { top: 52px; }
   body.promo-hidden .site-header:not(.static-header) { top: 0; }
 }
+
+/* === CABINETS PAGE — DURABILITY PROMISE STRIP === */
+.cabinets-promise {
+  background: #f4efe9;
+  padding: 38px 0;
+  border-top: 1px solid rgba(115, 92, 90, 0.12);
+  border-bottom: 1px solid rgba(115, 92, 90, 0.12);
+}
+.promise-inner { text-align: center; }
+.promise-label {
+  font-family: "Cinzel", "DejaVu Serif", Georgia, serif;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: #735c5a;
+  margin: 0 0 22px;
+}
+.promise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.promise-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+.promise-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #735c5a;
+  color: #f4efe9;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.promise-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.promise-text strong {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #1f1814;
+}
+.promise-sub {
+  font-size: 0.78rem;
+  color: #6e5c54;
+  margin-top: 2px;
+}
+
+/* === Highlighted feature line within standard-features list === */
+.standard-features-list .feature-highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(90deg, rgba(115,92,90,0.10) 0%, rgba(115,92,90,0.02) 100%);
+  border-left: 3px solid #735c5a;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2b201d;
+  grid-column: 1 / -1;       /* span full row of the 2-col grid */
+}
+/* Suppress the parent list's gold dash bullet on this row */
+.standard-features-list .feature-highlight::before {
+  content: none !important;
+}
+.standard-features-list .feature-highlight .hl-check {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  background: #735c5a;
+  color: #f4efe9;
+  border-radius: 50%;
+}
+
+@media (max-width: 700px) {
+  .cabinets-promise { padding: 28px 0; }
+  .promise-list { gap: 24px; flex-direction: column; align-items: flex-start; padding: 0 20px; }
+  .promise-list li { width: 100%; }
+}
