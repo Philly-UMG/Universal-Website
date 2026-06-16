@@ -4120,3 +4120,180 @@ body.promo-hidden .site-header:not(.static-header) { top: 0; }
   .care-reminder-intro { margin-bottom: 36px; }
   .care-reminder-cta .btn { width: 100%; text-align: center; }
 }
+
+/* === SUMMER SALE CAROUSEL (wraps granite-sale + vessel sinks) === */
+.sale-carousel {
+  position: relative;
+  overflow: hidden;
+}
+.sale-carousel-viewport {
+  overflow: hidden;
+}
+.sale-carousel-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.55s cubic-bezier(.4, .2, .2, 1);
+  will-change: transform;
+}
+.sale-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+}
+/* Inside the carousel, slides no longer apply their own outer overflow */
+.sale-carousel .granite-sale.sale-slide { padding-top: 84px; padding-bottom: 92px; }
+
+/* === Controls === */
+.sale-carousel-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  z-index: 5;
+  pointer-events: none;          /* pass through, except children */
+}
+.sale-carousel-controls > * { pointer-events: auto; }
+.sale-nav {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(200,168,119,0.4);
+  color: #f4efe9;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.sale-nav:hover { background: rgba(200,168,119,0.85); color: #2a1f1d; transform: scale(1.04); }
+.sale-nav:focus-visible { outline: 2px solid #c8a877; outline-offset: 3px; }
+.sale-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 999px;
+}
+.sale-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid rgba(244,239,233,0.5);
+  background: rgba(244,239,233,0.18);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.sale-dot:hover { background: rgba(200,168,119,0.5); }
+.sale-dot.is-active {
+  background: #c8a877;
+  border-color: #c8a877;
+  transform: scale(1.2);
+}
+.sale-dot:focus-visible { outline: 2px solid #c8a877; outline-offset: 3px; }
+
+/* === Vessel sink slide specifics === */
+.vessel-thumb-row {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 0;
+  margin: 0 0 32px;
+}
+.vessel-thumb-row li {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.vessel-thumb-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  background: rgba(0,0,0,0.45);     /* solid dark base — kills the gap */
+  border: 1px solid rgba(244,239,233,0.12);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.vessel-thumb-btn:hover {
+  border-color: rgba(200,168,119,0.6);
+  transform: translateY(-2px);
+}
+.vessel-thumb-btn.is-active {
+  border-color: #c8a877;
+  box-shadow: 0 0 0 1px #c8a877;
+}
+.vessel-thumb-btn:focus-visible {
+  outline: 2px solid #c8a877;
+  outline-offset: 3px;
+}
+.vessel-thumb-btn img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.vessel-thumb-label {
+  display: block;
+  padding: 10px 10px 12px;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #c8a877;
+  text-align: center;
+  background: inherit;              /* inherits the button's dark bg, no gap */
+  flex: 1;                          /* fills any leftover space */
+}
+.vessel-feature-frame {
+  aspect-ratio: 4 / 3;
+}
+.vessel-feature-frame img {
+  object-fit: cover;
+  filter: brightness(0.98);
+}
+.vessel-badge {
+  padding: 18px 22px;
+  gap: 6px;
+}
+.vessel-badge-tag {
+  font-size: 1.05rem !important;
+  letter-spacing: 0.18em !important;
+  background: #2a1f1d !important;
+  color: #c8a877 !important;
+  padding: 6px 14px !important;
+  border-radius: 4px !important;
+  margin: 0 !important;
+}
+.vessel-badge .granite-sale-badge-unit {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #2a1f1d;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .vessel-thumb-row { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .sale-nav { width: 38px; height: 38px; }
+  .vessel-thumb-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .vessel-thumb-label { font-size: 0.65rem; padding: 6px 8px; }
+}

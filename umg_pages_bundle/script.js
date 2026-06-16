@@ -190,6 +190,80 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ===== Vessel sink thumb → feature image swap =====
+  const vesselFeature = document.getElementById("vesselFeatureImg");
+  const vesselThumbs = document.querySelectorAll(".vessel-thumb-btn");
+  if (vesselFeature && vesselThumbs.length) {
+    vesselThumbs.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const src = btn.dataset.feature;
+        if (!src) return;
+        vesselFeature.src = src;
+        const labelEl = btn.querySelector(".vessel-thumb-label");
+        if (labelEl) vesselFeature.alt = labelEl.textContent.trim() + " vessel sink collection";
+        vesselThumbs.forEach((b) => b.classList.toggle("is-active", b === btn));
+      });
+    });
+  }
+
+  // ===== Sale carousel (granite + vessel sinks) =====
+  const saleCarousel = document.querySelector(".sale-carousel");
+  const saleTrack = document.getElementById("saleTrack");
+  if (saleCarousel && saleTrack) {
+    const slides = saleTrack.querySelectorAll(".sale-slide");
+    const dots = saleCarousel.querySelectorAll(".sale-dot");
+    const prevBtn = saleCarousel.querySelector(".sale-prev");
+    const nextBtn = saleCarousel.querySelector(".sale-next");
+    const total = slides.length;
+    const AUTOPLAY_MS = 8000;
+    let current = 0;
+    let timer = null;
+    let paused = false;
+
+    function update(idx) {
+      current = (idx + total) % total;
+      saleTrack.style.transform = `translateX(-${current * 100}%)`;
+      slides.forEach((s, i) => s.classList.toggle("is-active", i === current));
+      dots.forEach((d, i) => {
+        d.classList.toggle("is-active", i === current);
+        d.setAttribute("aria-selected", i === current ? "true" : "false");
+      });
+    }
+    function next() { update(current + 1); }
+    function prev() { update(current - 1); }
+    function restartAutoplay() {
+      if (timer) clearInterval(timer);
+      if (!paused) timer = setInterval(next, AUTOPLAY_MS);
+    }
+
+    prevBtn?.addEventListener("click", () => { prev(); restartAutoplay(); });
+    nextBtn?.addEventListener("click", () => { next(); restartAutoplay(); });
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => { update(i); restartAutoplay(); });
+    });
+
+    // Pause on hover / focus within carousel
+    saleCarousel.addEventListener("mouseenter", () => { paused = true; if (timer) clearInterval(timer); });
+    saleCarousel.addEventListener("mouseleave", () => { paused = false; restartAutoplay(); });
+    saleCarousel.addEventListener("focusin", () => { paused = true; if (timer) clearInterval(timer); });
+    saleCarousel.addEventListener("focusout", (e) => {
+      if (!saleCarousel.contains(e.relatedTarget)) {
+        paused = false;
+        restartAutoplay();
+      }
+    });
+
+    // Keyboard arrows when carousel has focus
+    saleCarousel.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { next(); restartAutoplay(); }
+      else if (e.key === "ArrowLeft") { prev(); restartAutoplay(); }
+    });
+
+    // Respect prefers-reduced-motion: disable autoplay
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduceMotion) restartAutoplay();
+  }
+
   // ===== Promo bar: pin header to top once user scrolls past =====
   const promoBar = document.querySelector(".promo-bar");
   if (promoBar) {
