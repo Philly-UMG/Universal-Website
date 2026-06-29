@@ -4559,3 +4559,51 @@ body.promo-hidden .site-header:not(.static-header) { top: 0; }
   outline: 2px solid #c8a877;
   outline-offset: 3px;
 }
+
+/* === Warehouse callout inside the showroom section === */
+.warehouse-callout {
+  position: relative;
+  margin: 28px 0 24px;
+  padding: 20px 22px 22px;
+  background: #f4efe9;
+  border-left: 3px solid #735c5a;
+  border-radius: 3px;
+}
+.warehouse-callout-eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: #c8a877;
+}
+.warehouse-callout h3 {
+  font-family: "Cinzel", "DejaVu Serif", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2b201d;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+.warehouse-callout p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #4a3f3a;
+  margin: 0 0 14px;
+}
+.warehouse-callout-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #735c5a;
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.warehouse-callout-link:hover {
+  color: #2b201d;
+  gap: 10px;
+}
