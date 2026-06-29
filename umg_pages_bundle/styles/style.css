@@ -4517,3 +4517,45 @@ body.promo-hidden .site-header:not(.static-header) { top: 0; }
   .slab-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .warehouse-steps { grid-template-columns: 1fr; }
 }
+
+/* === Slab gallery "View More" === */
+.slab-tile.is-extra {
+  display: none;
+}
+.slab-grid.is-expanded .slab-tile.is-extra {
+  display: block;
+  animation: fadeInSlab 0.4s ease;
+}
+@keyframes fadeInSlab {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slab-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+.slab-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+.slab-toggle-icon {
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.slab-toggle[aria-expanded="true"] .slab-toggle-icon {
+  transform: rotate(180deg);
+}
+.slab-toggle:focus-visible {
+  outline: 2px solid #c8a877;
+  outline-offset: 3px;
+}

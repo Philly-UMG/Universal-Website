@@ -190,6 +190,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ===== Slab gallery "View More" expand =====
+  const slabToggle = document.getElementById("slabToggle");
+  const slabGrid = document.getElementById("slabGrid");
+  if (slabToggle && slabGrid) {
+    slabToggle.addEventListener("click", () => {
+      const expanded = slabGrid.classList.toggle("is-expanded");
+      slabToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+      const label = slabToggle.querySelector(".slab-toggle-label");
+      if (label) label.textContent = expanded ? "View Fewer Slabs" : "View More Slabs";
+      // When collapsing, scroll back to the gallery so user doesn't lose context
+      if (!expanded) {
+        const gallery = document.getElementById("slab-gallery");
+        if (gallery) gallery.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
   // ===== Vessel sink thumb → feature image swap =====
   const vesselFeature = document.getElementById("vesselFeatureImg");
   const vesselThumbs = document.querySelectorAll(".vessel-thumb-btn");

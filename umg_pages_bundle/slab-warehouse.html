@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Slab Warehouse | Universal Marble & Granite</title>
-  <link rel="stylesheet" href="./styles/style.css?v=20260625" />
+  <link rel="stylesheet" href="./styles/style.css?v=20260628" />
   <link rel="icon" href="./images/umglogowhite.png?v=20260518" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -214,7 +214,8 @@
           <p>Inventory changes weekly. Visit in person to see what's available right now.</p>
         </div>
 
-        <div class="slab-grid">
+        <div class="slab-grid" id="slabGrid">
+          <!-- Initial 8 (visible) -->
           <figure class="slab-tile">
             <img src="./images/jasper/IMG_5752.JPG?v=20260625" alt="Rows of granite and marble slabs leaning against warehouse racks" loading="lazy" decoding="async">
           </figure>
@@ -222,47 +223,92 @@
             <img src="./images/jasper/IMG_5754.JPG?v=20260625" alt="Marble and quartz slabs in the UMG slab warehouse" loading="lazy" decoding="async">
           </figure>
           <figure class="slab-tile">
-            <img src="./images/jasper/IMG_5756.JPG?v=20260625" alt="Close-up of slab edges and natural stone veining" loading="lazy" decoding="async">
+            <img src="./images/jasper/IMG_6063.JPG?v=20260625" alt="Black granite and gray quartz slabs displayed side by side" loading="lazy" decoding="async">
           </figure>
           <figure class="slab-tile">
             <img src="./images/jasper/IMG_5758.JPG?v=20260625" alt="Aisle of full-size stone slabs ready for selection" loading="lazy" decoding="async">
           </figure>
           <figure class="slab-tile">
-            <img src="./images/jasper/IMG_5759.JPG?v=20260625" alt="Stone slab selection inside the UMG warehouse" loading="lazy" decoding="async">
-          </figure>
-          <figure class="slab-tile">
-            <img src="./images/jasper/IMG_5750.JPG?v=20260625" alt="Vertical view of stacked slabs and warehouse storage" loading="lazy" decoding="async">
-          </figure>
-          <figure class="slab-tile">
             <img src="./images/jasper/IMG_6049.JPG?v=20260625" alt="Polished black granite slab close-up" loading="lazy" decoding="async">
-          </figure>
-          <figure class="slab-tile">
-            <img src="./images/jasper/IMG_6051.JPG?v=20260625" alt="Granite slab detail showing surface finish" loading="lazy" decoding="async">
-          </figure>
-          <figure class="slab-tile">
-            <img src="./images/jasper/IMG_6053.JPG?v=20260625" alt="Slab face with natural mineral movement" loading="lazy" decoding="async">
-          </figure>
-          <figure class="slab-tile">
-            <img src="./images/jasper/IMG_6055.JPG?v=20260625" alt="Stacked slabs in the working warehouse" loading="lazy" decoding="async">
           </figure>
           <figure class="slab-tile">
             <img src="./images/jasper/IMG_6057.JPG?v=20260625" alt="Slab inventory and storage detail" loading="lazy" decoding="async">
           </figure>
           <figure class="slab-tile">
-            <img src="./images/jasper/IMG_6059.JPG?v=20260625" alt="Warehouse slab racking and walkway" loading="lazy" decoding="async">
-          </figure>
-          <figure class="slab-tile">
-            <img src="./images/jasper/IMG_6061.JPG?v=20260625" alt="UMG slab warehouse interior detail" loading="lazy" decoding="async">
-          </figure>
-          <figure class="slab-tile">
-            <img src="./images/jasper/IMG_6063.JPG?v=20260625" alt="Black granite and gray quartz slabs displayed side by side" loading="lazy" decoding="async">
-          </figure>
-          <figure class="slab-tile">
             <img src="./images/jasper/IMG_6065.JPG?v=20260625" alt="Slab face with reflective polished finish" loading="lazy" decoding="async">
           </figure>
           <figure class="slab-tile">
+            <img src="./images/jasper/IMG_6053.JPG?v=20260625" alt="Slab face with natural mineral movement" loading="lazy" decoding="async">
+          </figure>
+
+          <!-- Extra 20 (hidden until expanded) -->
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_5750.JPG?v=20260625" alt="Vertical view of stacked slabs and warehouse storage" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_5751.JPG?v=20260628" alt="Slab inventory view inside the UMG warehouse" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_5753.JPG?v=20260628" alt="Detail of slabs leaning against warehouse racks" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_5755.JPG?v=20260628" alt="Vertical slab close-up showing natural movement" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_5756.JPG?v=20260625" alt="Close-up of slab edges and natural stone veining" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_5757.JPG?v=20260628" alt="Tall slab portrait inside the warehouse" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_5759.JPG?v=20260625" alt="Stone slab selection inside the UMG warehouse" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6050.JPG?v=20260628" alt="Granite slab detail with reflective polish" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6051.JPG?v=20260625" alt="Granite slab detail showing surface finish" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6052.JPG?v=20260628" alt="Stone slab inventory view" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6055.JPG?v=20260625" alt="Stacked slabs in the working warehouse" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6056.JPG?v=20260628" alt="Polished granite face up close" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6058.JPG?v=20260628" alt="Granite slab variant detail" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6059.JPG?v=20260625" alt="Warehouse slab racking and walkway" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6060.JPG?v=20260628" alt="Marble and granite slab comparison" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6061.JPG?v=20260625" alt="UMG slab warehouse interior detail" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6062.JPG?v=20260628" alt="Slab edge profile detail" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
             <img src="./images/jasper/IMG_6067.JPG?v=20260625" alt="Stone slab detail in the UMG warehouse" loading="lazy" decoding="async">
           </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6068.JPG?v=20260628" alt="Slab tour walkway between stone racks" loading="lazy" decoding="async">
+          </figure>
+          <figure class="slab-tile is-extra">
+            <img src="./images/jasper/IMG_6070.JPG?v=20260628" alt="Slab face with veining detail" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <div class="slab-toggle-wrap">
+          <button type="button" class="slab-toggle btn btn-secondary" id="slabToggle" aria-expanded="false" aria-controls="slabGrid">
+            <span class="slab-toggle-label">View More Slabs</span>
+            <span class="slab-toggle-icon" aria-hidden="true">&#x2304;</span>
+          </button>
         </div>
       </div>
     </section>
