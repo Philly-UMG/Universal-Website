@@ -4679,3 +4679,110 @@ body.promo-hidden .site-header:not(.static-header) { top: 0; }
   .warehouse-strip-copy p { margin: 0 auto; }
   .warehouse-strip-btn { width: 100%; justify-content: center; }
 }
+
+/* === Contact section redesign (index) === */
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.contact-intro h2 {
+  font-family: "Cinzel", "DejaVu Serif", Georgia, serif;
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  font-weight: 700;
+  color: #2b201d;
+  line-height: 1.1;
+  margin: 10px 0 22px;
+}
+.contact-lead {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #4a3f3a;
+  margin: 0 0 30px;
+  max-width: 50ch;
+}
+.contact-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Contact card grid */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 22px;
+  background: #fff;
+  border: 1px solid rgba(115, 92, 90, 0.10);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(200, 168, 119, 0.55);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+.contact-card:focus-visible {
+  outline: 2px solid #c8a877;
+  outline-offset: 3px;
+}
+
+.contact-card-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: #735c5a;
+  color: #f4efe9;
+  border-radius: 50%;
+  transition: background 0.25s ease;
+}
+.contact-card:hover .contact-card-icon {
+  background: #c8a877;
+  color: #2b201d;
+}
+
+.contact-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.contact-card-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: #c8a877;
+}
+.contact-card-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2b201d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .contact-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .contact-cards { grid-template-columns: 1fr; }
+  .contact-cta-row .btn { width: 100%; text-align: center; }
+}

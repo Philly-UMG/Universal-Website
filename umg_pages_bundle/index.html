@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/style.css?v=20260630" />
+  <link rel="stylesheet" href="./styles/style.css?v=20260702" />
 
   <link rel="icon" href="./images/umglogowhite.png?v=20260518" type="image/x-icon" />
 
@@ -602,35 +602,63 @@
 
     <!-- CONTACT -->
     <section class="contact section alt-bg" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-text">
+      <div class="container contact-inner">
+
+        <div class="contact-intro">
           <p class="section-label">Get in Touch</p>
           <h2>Start Your Next Project</h2>
-          <p>
+          <p class="contact-lead">
             Ready to update your kitchen or bathroom? Reach out to discuss your ideas,
-            product needs, or showroom visit.
+            product needs, or a showroom visit &mdash; we&rsquo;d love to help you get started.
           </p>
-
-          <div class="contact-details">
-            <p><strong>Phone:</strong> <a href="tel:+12672104792" class="contact-link">267-210-4792</a></p>
-            <p><strong>Alt Phone:</strong>  <a href="tel:+12157393806" class="contact-link">215-739-3806</a></p>
-            <p><strong>Email:</strong> <a href="mailto:PhillyUMG@gmail.com" class="contact-link">PhillyUMG@gmail.com</a></p>
-            <p><strong>Instagram: </strong><u><a href="https://www.instagram.com/phillyumg"  target="_blank">@phillyumg</a></u></p>
+          <div class="contact-cta-row">
+            <a href="tel:+12672104792" class="btn btn-primary">Call 267-210-4792</a>
+            <a href="#showroom" class="btn btn-thirdary">Visit the Showroom</a>
           </div>
         </div>
 
-      <!--<form class="contact-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" />
+        <div class="contact-cards">
+          <a href="tel:+12672104792" class="contact-card" aria-label="Call main line 267-210-4792">
+            <span class="contact-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="contact-card-body">
+              <span class="contact-card-label">Phone</span>
+              <span class="contact-card-value">267-210-4792</span>
+            </span>
+          </a>
 
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your email" />
+          <a href="tel:+12157393806" class="contact-card" aria-label="Call alt line 215-739-3806">
+            <span class="contact-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            </span>
+            <span class="contact-card-body">
+              <span class="contact-card-label">Alt Phone</span>
+              <span class="contact-card-value">215-739-3806</span>
+            </span>
+          </a>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Tell us about your project"></textarea>
+          <a href="mailto:PhillyUMG@gmail.com" class="contact-card" aria-label="Email PhillyUMG at gmail dot com">
+            <span class="contact-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <span class="contact-card-body">
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">PhillyUMG@gmail.com</span>
+            </span>
+          </a>
 
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>-->
+          <a href="https://www.instagram.com/phillyumg" target="_blank" rel="noopener" class="contact-card" aria-label="Follow @phillyumg on Instagram">
+            <span class="contact-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span class="contact-card-body">
+              <span class="contact-card-label">Instagram</span>
+              <span class="contact-card-value">@phillyumg</span>
+            </span>
+          </a>
+        </div>
+
       </div>
     </section>
   </main>
