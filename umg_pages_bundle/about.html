@@ -109,15 +109,20 @@
     <section class="page-hero about-hero">
       <div class="container page-hero-grid">
         <div class="page-hero-copy">
-          <p class="section-label">About UMG</p>
-          <h1>Your Trusted Partner for <br>Home Improvement</h1>
-          <p class="page-intro">
+          <p class="section-label reveal" style="--reveal-delay: 100ms;">About UMG</p>
+          <h1 class="reveal" style="--reveal-delay: 250ms;">Your Trusted Partner for <br>Home Improvement</h1>
+          <p class="page-intro reveal" style="--reveal-delay: 400ms;">
             Universal Marble & Granite partners with homeowners, contractors, and renovation professionals to design and deliver kitchens, bathrooms, and more, all built on quality materials and dependable service.
           </p>
-          <div class="hero-actions">
+          <div class="hero-actions reveal" style="--reveal-delay: 550ms;">
             <a href="/#contact" class="btn btn-primary">Start Your Project</a>
             <a href="#policies" class="btn btn-thirdary">View Policies</a>
           </div>
+          <ul class="about-stats reveal" style="--reveal-delay: 700ms;" aria-label="UMG at a glance">
+            <li><span class="stat-num">20+</span><span class="stat-label">Years of experience</span></li>
+            <li><span class="stat-num">Free</span><span class="stat-label">Kitchen design services</span></li>
+            <li><span class="stat-num">4</span><span class="stat-label">States served</span></li>
+          </ul>
         </div>
 
         <div class="page-hero-panel about-hero-panel">
@@ -161,6 +166,7 @@
       <p>
         Our hands-on approach helps clients compare options, understand materials, and move forward with confidence, while our Philadelphia showroom and warehouse provide a space to explore cabinet styles and countertop selections with guidance from a knowledgeable local team.
       </p>
+
     </div>
 
     <div class="about-page-highlights">
@@ -198,6 +204,23 @@
           Local service, local showroom access, and a team focused on helping projects across Philadelphia and nearby areas.
         </p>
       </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="feature-image-block about-image-row">
+      <div class="feature-image-pair about-image-trio">
+        <div>
+          <img src="./images/gallery/proj-lawrence-kitchen.webp?v=20260709" alt="Designer kitchen with teal tile walls and brass accents by UMG" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <img src="./images/gallery/proj-cumberland-island.webp?v=20260709" alt="Calacatta quartz island with brass pendants and oak cabinetry by UMG" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <img src="./images/gallery/proj-sedgwick-island.webp?v=20260709" alt="Waterfall quartz island with black fluted base and matte black hood by UMG" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <p class="image-caption">Recent UMG kitchen projects &mdash; <a href="/gallery"><u>see the full gallery</u></a></p>
     </div>
   </div>
 </section>
@@ -334,6 +357,31 @@
           
 
         </div>
+      </div>
+    </section>
+
+    <section class="section warehouse-callout-section">
+      <div class="container">
+        <a href="/slab-warehouse" class="warehouse-strip" aria-label="Tour the slab warehouse">
+          <div class="warehouse-strip-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3"  y="6" width="3.5" height="22"/>
+              <rect x="8"  y="4" width="3.5" height="24"/>
+              <rect x="13" y="7" width="3.5" height="21"/>
+              <rect x="18" y="5" width="3.5" height="23"/>
+              <rect x="23" y="8" width="3.5" height="20"/>
+              <line x1="2" y1="28" x2="30" y2="28"/>
+            </svg>
+          </div>
+          <div class="warehouse-strip-copy">
+            <p class="warehouse-strip-eyebrow">Beyond the Showroom</p>
+            <h3>Step into our slab warehouse</h3>
+            <p>Walk the floor and pick the exact slab your countertop will come from &mdash; granite, quartz, marble, and quartzite, all in one place.</p>
+          </div>
+          <div class="warehouse-strip-cta">
+            <span class="warehouse-strip-btn">Tour the Warehouse <span class="warehouse-strip-arrow" aria-hidden="true">&rsaquo;</span></span>
+          </div>
+        </a>
       </div>
     </section>
 
