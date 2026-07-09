@@ -11,16 +11,34 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid #8b7355;
+  outline-offset: 3px;
+}
+
 body {
   font-family: Avenir-400, Helvetica, sans-serif;
   color: #1f1f1f;
   background-color: #f8f5f1;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+video {
+  max-width: 100%;
 }
 
 a {
@@ -66,6 +84,7 @@ h4 {
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.15;
   color: #161616;
+  text-wrap: balance;
 }
 
 .dark-section h2,
@@ -1934,7 +1953,7 @@ p {
 .about-section {
   background:
     linear-gradient(rgba(248, 245, 241, 0.92), rgba(248, 245, 241, 0.92)),
-    url("../images/IMG_5656.JPG");
+    url("../images/IMG_5656.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1989,7 +2008,7 @@ p {
 
 .benefits-section {
   position: relative;
-  background-image: url("../images/outfront_1.jpg");
+  background-image: url("../images/outfront_1.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
