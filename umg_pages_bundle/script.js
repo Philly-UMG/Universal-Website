@@ -383,3 +383,106 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Customer journey accordion (home page): smooth open/close + synced visual
+document.addEventListener("DOMContentLoaded", () => {
+  const journey = document.querySelector(".customer-journey");
+  if (!journey) return;
+
+  const steps = Array.from(journey.querySelectorAll(".journey-step"));
+  const img = document.getElementById("journeyVisualImg");
+  const badgeTitle = document.getElementById("journeyBadgeTitle");
+  const badgeSub = document.getElementById("journeyBadgeSub");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // preload step images so swaps feel instant
+  steps.forEach((d) => {
+    const src = d.dataset.img;
+    if (src) new Image().src = src;
+  });
+
+  function decodeEntities(s) {
+    const el = document.createElement("textarea");
+    el.innerHTML = s;
+    return el.value;
+  }
+
+  function syncVisual(d) {
+    if (!img || !d.dataset.img) return;
+    const apply = () => {
+      const visual = img.closest(".journey-visual");
+      if (visual) visual.classList.toggle("is-contain", d.dataset.fit === "contain");
+      img.src = d.dataset.img;
+      if (badgeTitle) badgeTitle.textContent = decodeEntities(d.dataset.badgeTitle || "");
+      if (badgeSub) badgeSub.textContent = decodeEntities(d.dataset.badgeSub || "");
+    };
+    if (reduceMotion) { apply(); return; }
+    img.style.opacity = "0";
+    if (badgeTitle) badgeTitle.style.opacity = "0";
+    if (badgeSub) badgeSub.style.opacity = "0";
+    setTimeout(() => {
+      apply();
+      const show = () => {
+        img.style.opacity = "1";
+        if (badgeTitle) badgeTitle.style.opacity = "1";
+        if (badgeSub) badgeSub.style.opacity = "1";
+      };
+      if (img.complete) show();
+      else img.addEventListener("load", show, { once: true });
+    }, 280);
+  }
+
+  function openStep(d) {
+    const body = d.querySelector(".journey-body");
+    d.open = true;
+    if (reduceMotion || !body) return;
+    const h = body.scrollHeight;
+    body.style.height = "0px";
+    body.style.opacity = "0";
+    requestAnimationFrame(() => {
+      body.style.transition = "height 0.35s ease, opacity 0.35s ease";
+      body.style.height = h + "px";
+      body.style.opacity = "1";
+    });
+    body.addEventListener("transitionend", function te(e) {
+      if (e.propertyName !== "height") return;
+      body.style.height = "";
+      body.style.transition = "";
+      body.removeEventListener("transitionend", te);
+    });
+  }
+
+  function closeStep(d) {
+    const body = d.querySelector(".journey-body");
+    if (reduceMotion || !body) { d.open = false; return; }
+    body.style.height = body.scrollHeight + "px";
+    requestAnimationFrame(() => {
+      body.style.transition = "height 0.3s ease, opacity 0.3s ease";
+      body.style.height = "0px";
+      body.style.opacity = "0";
+    });
+    body.addEventListener("transitionend", function te(e) {
+      if (e.propertyName !== "height") return;
+      d.open = false;
+      body.style.height = "";
+      body.style.opacity = "";
+      body.style.transition = "";
+      body.removeEventListener("transitionend", te);
+    });
+  }
+
+  steps.forEach((d) => {
+    const summary = d.querySelector("summary");
+    if (!summary) return;
+    summary.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (d.open) {
+        closeStep(d);
+      } else {
+        steps.forEach((o) => { if (o !== d && o.open) closeStep(o); });
+        openStep(d);
+        syncVisual(d);
+      }
+    });
+  });
+});
