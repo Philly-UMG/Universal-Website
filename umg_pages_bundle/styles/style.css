@@ -2579,73 +2579,124 @@ body.lightbox-open {
 }
 
 .site-footer {
-  position: relative;
-  background: #f4efe9;
-  padding: 60px 20px 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 90%;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.06);
-  transform: translateX(-50%);
+  background: #2b2220;
+  color: #f8f5f1;
+  padding: 76px 20px 0;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.4fr 1.1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 60px;
 }
 
-.footer-brand h3 {
-  font-size: 28px;
-  margin-bottom: 12px;
+.footer-logo img {
+  height: 72px;
+  width: auto;
 }
 
-.footer-brand p {
-  max-width: 320px;
-  color: rgba(0, 0, 0, 0.6);
-  line-height: 1.6;
+.footer-tagline {
+  max-width: 300px;
+  margin-top: 20px;
+  color: rgba(248, 245, 241, 0.6);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.footer-social {
+  margin-top: 22px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(201, 169, 97, 0.45);
+  border-radius: 50%;
+  color: #c9a961;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.footer-social a:hover {
+  background: #c9a961;
+  border-color: #c9a961;
+  color: #2b2220;
 }
 
 .footer-col h4 {
-  font-size: 14px;
-  letter-spacing: 1.5px;
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  margin-bottom: 16px;
-  color: rgba(0, 0, 0, 0.6);
+  color: #c9a961;
+  margin-bottom: 20px;
 }
 
-.footer-col ul {
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 26px;
   padding: 0;
   margin: 0;
 }
 
-.footer-col li {
-  margin-bottom: 10px;
+.footer-links-single {
+  grid-template-columns: 1fr;
 }
 
-.footer-col a {
-  color: #111;
-  transition: opacity 0.25s ease;
+.footer-links a,
+.footer-col address a {
+  color: rgba(248, 245, 241, 0.78);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
-.footer-col a:hover {
-  opacity: 0.5;
+.footer-links a:hover,
+.footer-col address a:hover {
+  color: #e5c98c;
+}
+
+.footer-col address {
+  font-style: normal;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.footer-hours {
+  color: rgba(248, 245, 241, 0.6);
+  font-size: 0.92rem;
+  line-height: 1.7;
 }
 
 .footer-bottom {
-  margin: 30px 0;
-  padding: 20px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  text-align: center;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom-inner p {
+  color: rgba(248, 245, 241, 0.45);
+  font-size: 0.85rem;
+}
+
+.footer-bottom-inner a {
+  color: rgba(248, 245, 241, 0.65);
+  transition: color 0.2s ease;
+}
+
+.footer-bottom-inner a:hover {
+  color: #e5c98c;
 }
 
 
@@ -2906,27 +2957,7 @@ html {
   background: #fffdfa;
 }
 
-/* ---- Footer refinement ---- */
-.footer-brand h3 {
-  font-family: "Cinzel", Georgia, serif;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  font-size: 1.4rem;
-  color: #735c5a;
-}
-.footer-col h4 {
-  font-family: "Cinzel", Georgia, serif;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  color: #735c5a;
-}
-.site-footer a {
-  transition: color 0.25s ease, opacity 0.25s ease;
-}
-.site-footer a:hover {
-  color: #735c5a;
-  opacity: 1;
-}
+
 
 /* ---- Sub-page hero titles + panels ---- */
 .page-hero-copy h1 {
