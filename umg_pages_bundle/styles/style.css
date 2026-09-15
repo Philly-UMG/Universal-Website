@@ -4241,6 +4241,7 @@ html {
 }
 
 /* === SUMMER SALE PROMO BAR (sitewide, top of every page) === */
+/* --- Promo / announcement bar (styles retained, markup removed sitewide) --- */
 .promo-bar {
   display: block;
   text-decoration: none;
@@ -4289,25 +4290,20 @@ html {
 }
 .promo-bar:hover .promo-bar-cta { color: #f4cf8a; }
 
-/* Fixed header on index sits at top:0 — push it below the bar (~38px tall on desktop).
-   Once user scrolls past the bar, .promo-hidden snaps the header back to top:0. */
+/* Promo bar is not currently in the markup, so the fixed header sits flush at the top.
+   If the bar is ever re-added, restore the top offsets (38px / 44px / 52px) here. */
 .site-header:not(.static-header) {
-  top: 38px;
+  top: 0;
   transition: top 0.25s ease;
 }
-body.promo-hidden .site-header:not(.static-header) { top: 0; }
 
 @media (max-width: 700px) {
   .promo-bar-inner { padding: 8px 14px; font-size: 0.78rem; gap: 10px; }
   .promo-bar-cta { display: none; }
-  .site-header:not(.static-header) { top: 44px; }
-  body.promo-hidden .site-header:not(.static-header) { top: 0; }
 }
 @media (max-width: 460px) {
   .promo-bar-text { font-size: 0.74rem; }
   .promo-bar-tag { font-size: 0.62rem; padding: 2px 8px; letter-spacing: 0.14em; }
-  .site-header:not(.static-header) { top: 52px; }
-  body.promo-hidden .site-header:not(.static-header) { top: 0; }
 }
 
 /* === CABINETS PAGE — DURABILITY PROMISE STRIP === */
