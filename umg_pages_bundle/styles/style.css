@@ -1413,12 +1413,104 @@ a.journey-track:hover .journey-track-cue {
 /* --------------------
    GALLERY / RESOURCE LIST
 -------------------- */
-.gallery-grid {
+/* Homepage project mosaic — one feature tile plus a 2x2 of supporting shots */
+.home-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  justify-items: center;
-  align-items: start;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: clamp(148px, 15.5vw, 205px);
+  gap: 16px;
+}
+
+.home-gallery-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+.home-gallery-tile--feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Tall slot — sized for portrait shots so they aren't cropped to a letterbox */
+.home-gallery-tile--tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.home-gallery-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-gallery-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 14, 13, 0.78) 0%, rgba(20, 14, 13, 0.2) 45%, transparent 72%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.home-gallery-tile:hover img,
+.home-gallery-tile:focus-visible img { transform: scale(1.06); }
+
+.home-gallery-tile:hover::after,
+.home-gallery-tile:focus-visible::after { opacity: 1; }
+
+.home-gallery-tile:focus-visible {
+  outline: 2px solid #c8a877;
+  outline-offset: 3px;
+}
+
+.home-gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 14px 16px;
+  color: #f8f5f1;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.home-gallery-tile:hover .home-gallery-caption,
+.home-gallery-tile:focus-visible .home-gallery-caption {
+  opacity: 1;
+  transform: none;
+}
+
+.home-gallery-kicker {
+  display: block;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e0c79b;
+  margin-bottom: 5px;
+}
+
+.home-gallery-tile--feature .home-gallery-caption {
+  font-size: 1.05rem;
+  padding: 20px 22px;
+}
+
+/* Touch devices never hover — keep the captions visible there */
+@media (hover: none) {
+  .home-gallery-caption { opacity: 1; transform: none; }
+  .home-gallery-tile::after { opacity: 1; }
 }
 
 .gallery-cta,
@@ -1436,22 +1528,6 @@ a.journey-track:hover .journey-track-cue {
 
 .gallery-page-note p {
   color: #666;
-}
-
-.gallery-cards {
-  width: 100%;
-  max-width: 500px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.gallery-cards img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .gallery-hero {
@@ -2875,30 +2951,6 @@ html {
   margin-top: auto;
 }
 
-/* ---- Gallery preview (homepage): hover zoom + overlay ---- */
-.gallery-cards {
-  position: relative;
-  overflow: hidden;
-}
-.gallery-cards img {
-  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.gallery-cards:hover img {
-  transform: scale(1.06);
-}
-.gallery-cards::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.38), transparent 55%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-.gallery-cards:hover::after {
-  opacity: 1;
-}
-
 /* ---- Showroom: framed image, offset opposite of about ---- */
 .showroom-image {
   position: relative;
@@ -3668,13 +3720,14 @@ html {
     max-width: 100%;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .home-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 160px;
   }
 
-  .gallery-cards {
-    max-width: 100%;
-    height: 200px;
+  .home-gallery-tile--feature {
+    grid-column: span 2;
+    grid-row: span 2;
   }
 
   .page-hero {
@@ -3861,8 +3914,19 @@ html {
     font-size: 0.9rem;
   }
 
-  .gallery-grid {
+  .home-gallery {
     grid-template-columns: 1fr;
+    grid-auto-rows: 190px;
+    gap: 12px;
+  }
+
+  .home-gallery-tile--feature {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .home-gallery-tile--feature .home-gallery-caption {
+    font-size: 0.95rem;
   }
 }
 
