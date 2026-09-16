@@ -2119,6 +2119,48 @@ a.journey-track:hover .journey-track-cue {
 }
 
 /* Section-level shared spec callout (above the cabinet grid) */
+/* ---- "A few of the options" note under a style grid ---- */
+.style-note {
+  max-width: 760px;
+  margin: 44px auto 0;
+  padding: 26px 30px 28px;
+  text-align: center;
+  background: linear-gradient(180deg, #faf6f0 0%, #f3ece2 100%);
+  border: 1px solid rgba(201, 169, 97, 0.32);
+  border-radius: 4px;
+}
+
+.style-note-label {
+  margin: 0 0 10px;
+  font-family: "Cinzel", "Cormorant Garamond", "Playfair Display", serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8a6a2f;
+}
+
+.style-note p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #4a3f3a;
+  margin: 0;
+}
+
+.style-note-cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 560px) {
+  .style-note { padding: 22px 20px 24px; }
+  .style-note-cta { flex-direction: column; align-items: stretch; }
+  .style-note-cta .btn { width: 100%; text-align: center; }
+}
+
 .standard-features {
   max-width: 760px;
   margin: 28px auto 36px;
